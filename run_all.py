@@ -10,7 +10,7 @@ print(discover)
 
 
 t = time.strftime("%Y-%m-%d %H-%M-%S")
-reportPath = "D:\liuling\wx\\report\\"+"result%s.html"%t
+reportPath = "D:\liuling\wx\\report\\"+"result.html"
 
 fp = open(reportPath, "wb")
 
