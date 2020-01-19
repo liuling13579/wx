@@ -15,7 +15,7 @@ class Shopping(Base):
     loc_shop = ("xpath",".//*[@class='ant-card-body']/div/div[2]/div/div/div/div/div/span") #判断购物车内商品数量
     loc_courseTitle1 = ("xpath",".//*[@class='ant-list ant-list-split']/div/div/span[last()]/div/div/span/div/div[2]/div[1]/div[1]")
     loc_price1 = ("xpath",".//*[@class='ant-list ant-list-split']/div/div/span[last()]/div/div/span/div/div[2]/div[1]/div[2]/span[2]")
-    loc_price2 = ("xpath",".//*[@class='ant-spin-container']/span/div/div/span/div/div[2]/div[1]/div[2]/span[2]")  #购物车商品价格，返回多个元素
+    loc_price2 = ("xpath",".//span[starts-with(@class, 'price_num')]")  #购物车商品价格，返回多个元素
     loc_totalprice = ("xpath",".//*[@id='paysty']/div/div[2]/div[1]")
     loc_pay = ("xpath",".//*[text()='立即支付']/..")
     loc_payway1 = ("xpath",".//*[@id='radiogroup']/label[1]/span[1]")#微信
@@ -178,12 +178,12 @@ class Shopping(Base):
                 exist = self.isElementExist(self.loc_erweima2)
         return  exist
 
-    def is_creatorder_success(self,ordertype,paymentsourse,remark):
-        '''判断订单创建是否成功'''
-        sql="SELECT * from orders o WHERE o.remark= %s",remark
-        S = SQL_conn()
-        S.sql_conn()
-        S.sql_search(sql)
+    # def is_creatorder_success(self,ordertype,paymentsourse,remark):
+    #     '''判断订单创建是否成功'''
+    #     sql="SELECT * from orders o WHERE o.remark= %s",remark
+    #     S = SQL_conn()
+    #     S.sql_conn()
+    #     S.sql_search(sql)
 
 
 

@@ -20,7 +20,7 @@ class OpenVipTest(unittest.TestCase):
 
     def test_01(self):
         '''
-        开通课程
+        开通会员卡
         '''
         self.Op.open_vip(key='会员')
         t=self.Op.is_open_success()

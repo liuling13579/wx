@@ -53,7 +53,7 @@ class ShoppingCartTest(unittest.TestCase):
         本校课程-优惠券，支付宝订单
         '''
 
-        self.C.choose_coupon(pa.loc_course)
+        self.C.use_coupon(pa.loc_course)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 
@@ -62,7 +62,7 @@ class ShoppingCartTest(unittest.TestCase):
         本校课程包-优惠券，支付宝订单
         '''
 
-        self.C.choose_coupon(pa.loc_bundle,dis=1)
+        self.C.use_coupon(pa.loc_bundle,dis=1)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 
@@ -71,7 +71,7 @@ class ShoppingCartTest(unittest.TestCase):
         共享课程-优惠券，支付宝订单
         '''
 
-        self.C.choose_coupon(pa.loc_share_course1,dis=1)
+        self.C.use_coupon(pa.loc_share_course1,dis=1)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 
@@ -80,7 +80,7 @@ class ShoppingCartTest(unittest.TestCase):
         共享课程-优惠券，支付宝订单
         '''
 
-        self.C.choose_coupon(pa.loc_share_course2,dis=1)
+        self.C.use_coupon(pa.loc_share_course2,dis=1)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 
@@ -89,7 +89,7 @@ class ShoppingCartTest(unittest.TestCase):
         共享课程bao-优惠券，支付宝订单
         '''
 
-        self.C.choose_coupon(pa.loc_share_bundle1,dis=1)
+        self.C.use_coupon(pa.loc_share_bundle1,dis=1)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 
@@ -97,7 +97,7 @@ class ShoppingCartTest(unittest.TestCase):
         '''
         跨平台共享课程bao-优惠券，支付宝订单
         '''
-        self.C.choose_coupon(pa.loc_share_bundle2,dis=1)
+        self.C.use_coupon(pa.loc_share_bundle2,dis=1)
         t = self.S.creatorder(2)
         self.assertTrue(t)
 

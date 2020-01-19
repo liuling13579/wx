@@ -63,7 +63,7 @@ class OpenCourseFw(Base):
         '''
         time.sleep(2)
         self.click(self.loc_opentype)
-        self.clicks(self.loc_opentype_vip)
+        self.click(self.loc_opentype_vip)
         self.sendKeys(self.loc_keyVip,key,True)
         self.click(self.loc_cx_vip)
 

@@ -30,9 +30,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         本校课程价格校验
         '''
-        self.LC.search_course(pa.loc_course)
+        courseid = self.LC.search_course(pa.loc_course)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=0)
         print(p1,p2)
         self.assertEquals(p1,p2)
 
@@ -41,9 +41,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         平台内共享课程价格校验
         '''
-        self.LC.search_course(pa.loc_share_course1)
+        courseid = self.LC.search_course(pa.loc_share_course1)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount,True)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=0)
         print(p1,p2)
         self.assertEquals(p1,p2)
 
@@ -51,9 +51,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         跨平台共享课程价格校验
         '''
-        self.LC.search_course(pa.loc_share_course2)
+        courseid = self.LC.search_course(pa.loc_share_course2)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount,True)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=1)
         print(p1,p2)
         self.assertEquals(p1,p2)
 
@@ -61,9 +61,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         课程bao价格校验
         '''
-        self.LC.search_course(pa.loc_bundle)
+        courseid = self.LC.search_course(pa.loc_bundle)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=0)
         print(p1,p2)
         self.assertEquals(p1,p2)
 
@@ -71,9 +71,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         平台内共享课程bao价格校验
         '''
-        self.LC.search_course(pa.loc_share_bundle1)
+        courseid = self.LC.search_course(pa.loc_share_bundle1)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount,True)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=1)
         print(p1,p2)
         self.assertEquals(p1,p2)
 
@@ -81,9 +81,9 @@ class CourseDetailTest(unittest.TestCase):
         '''
         跨平台共享课程bao价格校验
         '''
-        self.LC.search_course(pa.loc_share_bundle2)
+        courseid = self.LC.search_course(pa.loc_share_bundle2)
         p1 = self.CD.get_price()
-        p2 = self.CD.is_price(self.course_discount,self.shope_discount,True)
+        p2 = self.S.get_vipprice(courseid,self.course_discount,isshare=1)
         print(p1,p2)
         self.assertEquals(p1,p2)
 

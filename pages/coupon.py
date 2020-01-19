@@ -54,23 +54,26 @@ class Coupon(Base):
         '''使用优惠券'''
         n = self.shop_order(title)
         time.sleep(1)
-        eles_coupon = self.findElementsNew(self.loc_coupon)
-        eles_coupon[n].click()
-        if dis == 1:
-            try:
-                lcu= self.findElementsNew(self.loc_coupon_dis)
-                lcu[0].click()  #默认选择第一个匹配的优惠券
-            except:
-                print("用户暂时无折扣优惠券")
-        else:
-            try:
-                lcu= self.findElementsNew(self.loc_coupon_daijin)
-                lcu[0].click()  #默认选择第一个匹配的优惠券
-            except:
-                print("用户暂时无满减优惠券")
-        time.sleep(1)
-        self.click(self.loc_ok)
-        time.sleep(2)
+        try:
+            eles_coupon = self.findElementsNew(self.loc_coupon)
+            eles_coupon[n].click()
+            if dis == 1:
+                try:
+                    lcu= self.findElementsNew(self.loc_coupon_dis)
+                    lcu[0].click()  #默认选择第一个匹配的优惠券
+                except:
+                    print("用户暂时无折扣优惠券")
+            else:
+                try:
+                    lcu= self.findElementsNew(self.loc_coupon_daijin)
+                    lcu[0].click()  #默认选择第一个匹配的优惠券
+                except:
+                    print("用户暂时无满减优惠券")
+            time.sleep(1)
+            self.click(self.loc_ok)
+            time.sleep(2)
+        except :
+            print("当前课程无优惠券可使用")
 
     def choose_coupon(self,title,dis=1):
         '''选择使用优惠券

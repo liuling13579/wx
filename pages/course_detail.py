@@ -90,7 +90,7 @@ class Course_Detail(Base,SQL_conn):
     def is_price(self,course_discount=1,shope_discount=1,isshare=False):
         '''判断课程价格是否正确'''
         #获取页面courseid
-        course_id= self.get_course_id()
+        course_id= LearnCenter(self.driver).get_course_id()
 
         #获取当前网校，平台id
         school_t = School().getSchool()

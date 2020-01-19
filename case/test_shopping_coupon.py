@@ -11,7 +11,7 @@ from pages.learn_center import LearnCenter
 import time
 
 class ShoppingCartTest(unittest.TestCase):
-    '''登录测试用例'''
+    '''使用优惠券之后价格'''
 
     @classmethod
     def setUpClass(cls):
