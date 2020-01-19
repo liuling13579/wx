@@ -11,7 +11,7 @@ loc_share_bundle2 = "一大把火柴"
 loc_name_t ="yingxiong"
 loc_pwd_t = "123456"
 
-loc_name_s ="shibing2"
+loc_name_s ="xiaoman73"
 loc_pwd_s = "123456"
 
 
