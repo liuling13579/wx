@@ -21,17 +21,26 @@ class LoginTest(unittest.TestCase):
         print("获取的结果：%s"%t)
         self.assertIn("yingxiong",t)
 
+    def test_02(self):
+        '''
+        "xiaoman88","123456"
+        '''
+        self.L.login("xiaoman88","123456")
+        t = self.L.get_login_username()
+        print("获取的结果：%s"%t)
+        self.assertIn("xiaoman88",t)
 
-    # def test_02(self):
-    #     '''
-    #     "",""
-    #     '''
-    #     self.L.login("","")
-    #     a= self.L.get_alert_text()
-    #     print("提示：%s"%a)
-    #     self.assertIsNot(a,"")
 
     def test_03(self):
+        '''
+        "",""
+        '''
+        self.L.login("","")
+        a= self.L.get_alert_text()
+        print("提示：%s"%a)
+        self.assertIsNot(a,"")
+
+    def test_04(self):
         '''
         "yingxiong2","123456"
         '''

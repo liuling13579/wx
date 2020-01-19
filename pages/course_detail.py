@@ -87,12 +87,6 @@ class Course_Detail(Base,SQL_conn):
     #     try:
 
 
-
-
-
-
-
-
     def is_price(self,course_discount=1,shope_discount=1,isshare=False):
         '''判断课程价格是否正确'''
         #获取页面courseid

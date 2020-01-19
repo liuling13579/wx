@@ -8,7 +8,7 @@ class Login(Base):
     loc_user = ("xpath",".//*[@class='account']/input")
     loc_psw = ("xpath",".//*[@class='password']/input")
     loc_button = ("css selector",".submit")
-    loc_userinfo = ("class name",".//*[@class='ant-badge']/../../span[3]/span[2]")
+    loc_userinfo = ("xpath",".//*[@class='ant-badge']/../../span[3]/span[2]")
     loc_tishi = ("class name","tip")
     #首页地址
     url_1 = "https://test.1x.cn"
