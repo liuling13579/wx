@@ -23,7 +23,7 @@ sys.setdefaultencoding('utf8')
 # 当前脚本所在文件真实路径
 cur_path = os.path.dirname(os.path.realpath(__file__))
 
-def add_case(caseName="case", rule="test_l*.py"):
+def add_case(caseName="case", rule="test_*.py"):
     '''第一步：加载所有的测试用例'''
     case_path = os.path.join(cur_path, caseName)  # 用例文件夹
     # 如果不存在这个case文件夹，就自动创建一个
