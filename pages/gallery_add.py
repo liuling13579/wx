@@ -87,11 +87,22 @@ class Gallery(Base):
 
     def input_deadline(self,t=1):
         '''输入商品有效期'''
-        self.sendKeys(self.loc_10,t,True)
+        # self.sendKeys(self.loc_10,t,True)
+
+        # js = 'document.querySelector("#deadline").value="";'
+        # self.driver.execute_script(js)
+        # self.sendKeys(self.loc_10,t)
+        self.double_click(self.loc_10)
+        self.sendKeys(self.loc_10,t)
+
+
 
     def input_price(self,p=1):
         '''输入商品价格'''
-        self.sendKeys(self.loc_11,p,True)
+        # self.sendKeys(self.loc_11,p,True)
+        js = 'document.querySelector("#price").value="";'
+        self.driver.execute_script(js)
+        self.sendKeys(self.loc_11,p)
 
     def is_vip(self,y):
         '''0：不享受会员价，否则享受会员价'''

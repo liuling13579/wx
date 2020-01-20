@@ -28,33 +28,33 @@ class Gallery_Add(unittest.TestCase):
         print(n)
         self.assertEquals(name,n)
 
-    def test_02(self):
-        '''
-        上架
-        '''
-        self.G.gallery_operate(1)
-        r=self.G.is_on_sale_sucess()
-        print(r)
-        self.assertEquals(r,"销售中")
-
-
-    def test_03(self):
-        '''
-        下架
-        '''
-        self.G.gallery_operate(2)
-        r=self.G.is_on_sale_sucess()
-        print(r)
-        self.assertEquals(r,"已下架")
-
-    def test_04(self):
-        '''
-        删除
-        '''
-        self.G.gallery_operate(3)
-        r=self.G.is_gallery()
-        print(r)
-        self.assertNotEqual(r,self.name)
+    # def test_02(self):
+    #     '''
+    #     上架
+    #     '''
+    #     self.G.gallery_operate(1)
+    #     r=self.G.is_on_sale_sucess()
+    #     print(r)
+    #     self.assertEquals(r,"销售中")
+    #
+    #
+    # def test_03(self):
+    #     '''
+    #     下架
+    #     '''
+    #     self.G.gallery_operate(2)
+    #     r=self.G.is_on_sale_sucess()
+    #     print(r)
+    #     self.assertEquals(r,"已下架")
+    #
+    # def test_04(self):
+    #     '''
+    #     删除
+    #     '''
+    #     self.G.gallery_operate(3)
+    #     r=self.G.is_gallery()
+    #     print(r)
+    #     self.assertNotEqual(r,self.name)
 
 
 

@@ -69,6 +69,11 @@ class Base():
         eles = self.findElementsNew(locator)
         eles[i].click()
 
+    def double_click(self,locator):
+        '''双击事件'''
+        element = self.findElementNew(locator)
+        ActionChains(self.driver).double_click(element).perform()
+
     def clear(self,locator):
         '''清空文本框'''
         ele = self.findElementNew(locator)
